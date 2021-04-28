@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexTasksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/tasks', IndexTasksController::class)
+    ->middleware(['auth'])
+    ->name('tasks.index');
 
 require __DIR__.'/auth.php';
