@@ -6,7 +6,7 @@
             @livewire('delete-task',['taskId'=>$task->id], key($task->id))
         </div>
     @empty
-        <div class="mt-6 border shadow-lg py-1 px-4  text-center">
+        <div class="mt-6 border shadow-lg py-10 px-4 font-bold text-center">
             {{ __('No tasks to show') }}
         </div>
     @endforelse

@@ -14,7 +14,7 @@
             <input
                 wire:model="title"
                 id="title"
-                class="border py-2 px-3 text-grey-darkest"
+                class="border py-2 px-3 text-grey-darkest @if($errors->has('title')) border-2 border-red-500 @endif"
                 placeholder="{{ __('Enter title') }}">
             @error('title')
             <div class="text-red-600">{{ $message }}</div>
@@ -28,7 +28,8 @@
                 wire:model="description"
                 id="description"
                 placeholder="{{ __('Enter description') }}"
-                class="border py-2 px-3 text-grey-darkest auto-rows-max" rows="7"></textarea>
+                class="border py-2 px-3 text-grey-darkest auto-rows-max @if($errors->has('description')) border-2 border-red-500 @endif"
+                rows="7"></textarea>
             @error('description')
             <div class="text-red-600">{{ $message }}</div>
             @enderror
