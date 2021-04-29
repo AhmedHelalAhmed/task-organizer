@@ -12,7 +12,7 @@
                 class="mb-2 capitalize font-bold text-lg text-grey-darkest"
                 for="title">{{ __('title') }} <code class="text-red-600">*</code></label>
             <input
-                wire:model="title"
+                wire:model.lazy="title"
                 id="title"
                 class="border py-2 px-3 text-grey-darkest @if($errors->has('title')) border-2 border-red-500 @endif"
                 placeholder="{{ __('Enter title') }}">
@@ -25,7 +25,7 @@
                 class="mb-2 capitalize font-bold text-lg text-grey-darkest"
                 for="description">{{ __('description') }}</label>
             <textarea
-                wire:model="description"
+                wire:model.lazy="description"
                 id="description"
                 placeholder="{{ __('Enter description') }}"
                 class="border py-2 px-3 text-grey-darkest auto-rows-max @if($errors->has('description')) border-2 border-red-500 @endif"
