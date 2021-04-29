@@ -17,6 +17,6 @@ class IndexTasksAction
      */
     public function execute()
     {
-        return Task::all();
+        return Task::paginate(2);
     }
 }

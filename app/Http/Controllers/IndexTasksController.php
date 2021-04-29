@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\Tasks\IndexTasksAction;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 /**
  * Class IndexTasksController
@@ -12,12 +14,10 @@ use App\Actions\Tasks\IndexTasksAction;
 class IndexTasksController
 {
     /**
-     * @param IndexTasksAction $indexTasksAction
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return Application|Factory|View
      */
-    public function __invoke(IndexTasksAction $indexTasksAction)
+    public function __invoke()
     {
-        $tasks = $indexTasksAction->execute();
-        return view('tasks.index', compact('tasks'));
+        return view('tasks.index');
     }
 }
